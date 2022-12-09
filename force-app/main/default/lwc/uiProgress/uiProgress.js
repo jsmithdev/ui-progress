@@ -128,6 +128,7 @@ export default class UiProgress extends LightningElement {
 	circleOptions() {
 		return {
 			color: this.color,
+			trailColor: this.background,
 			// This has to be the same size as the maximum width to
 			// prevent clipping
 			strokeWidth: 4,
