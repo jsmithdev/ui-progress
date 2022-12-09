@@ -1,9 +1,73 @@
 <template>
-    <c-ui-progress
-        text
-        type="line"
-        progress="50"
-        color="#07e887"
-        background="#000000"
-    ></c-ui-progress>
+    <lightning-card title="Demo">
+        <div class="container">
+            <div class="box">
+                <div style="width: 100%;">
+                    <div style="margin: 0 auto;width: fit-content;">
+                        <c-ui-progress
+                            text
+                            width={quarterWidth}
+                            progress={progress}
+                            color={color}
+                            background="#888"
+                        ></c-ui-progress>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div style="width: 100%;">
+                    <div style="margin: 0 auto;width: fit-content;">
+                        
+                        <c-ui-progress
+                            text
+                            type="circle"
+                            width={quarterWidth}
+                            progress={progress}
+                            color={color}
+                            background="#888"
+                        ></c-ui-progress>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div style="width: 100%;">
+                    <div style="margin: 0 auto;width: fit-content;">
+                        <c-ui-progress
+                            text
+                            type="semi"
+                            width={quarterWidth}
+                            progress={progress}
+                            color={color}
+                            background="#888"
+                        ></c-ui-progress>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div style="width: 100%;">
+                    <div style="margin: 0 auto;width: fit-content;">
+                        <c-ui-progress
+                        width={quarterWidth}
+                            type="custom"
+                            progress={progress}
+                            color={color}
+                            background="#888"
+                            custom-svg={customSvg}
+                        ></c-ui-progress>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+        <br />
+
+
+
+        <div slot="footer">
+            <lightning-button
+                label="Randomize"
+                onclick={randomizeProgress}
+            ></lightning-button>
+        </div>
+    </lightning-card>
 </template>
