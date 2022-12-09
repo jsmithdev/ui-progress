@@ -1,18 +1,60 @@
-# Salesforce DX Project: Next Steps
+# ui-progress
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+LWC w/ ProgressBar.js for line, circle, semi or custom progress UI(s)
 
-## How Do You Plan to Deploy Your Changes?
+<img src="https://media.giphy.com/media/dUB2nhsaUpidXTcssA/giphy.gif"/>
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+## APIs
 
-## Configure Your Salesforce DX Project
+| API        | Options (default)            | Description                                          |
+| ---------- | ---------------------------- | ---------------------------------------------------- |
+| progress   | 0 to 100 [required]          | Count of progress is                                 |
+| type       | (line), circle, semi, custom | Type of progress UI                                  |
+| text       | (false)                      | Adding the `text` attribute shows text               |
+| width      | (200px)                      | Hex code color of the line / progress                |
+| color      | (#1d07e8)                    | Hex code color of the line / progress                |
+| background | (#EEE)                       | Hex code color of track the line / progress follows  |
+| custom-svg |                              | String value of a custom svg (see note below)        |
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+> Type `custom` needs `custom-svg` to be a string value of your custom svg. The path in the svg that should be the track of the progress line needs `class="progress"`. Not being able to use a `slot` has to do with an LWC limitation of DOM manipulation. See the demo for custom svg example.
 
-## Read All About It
+## Deploy
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+todo ~~Click to deploy can be done at [https://component.land?share=jsmithdev%2Fui-progress](https://component.land?share=jsmithdev%2Fui-progress)~~
+
+### SFDX
+
+Covert with SFDX; This creates a folder called `deploy`
+
+```bash
+sfdx force:source:convert -r force-app/main/default/lwc/uiProgress -d deploy
+```
+
+- Use `sfdx force:source:convert -r force-app -d deploy` instead to deploy the demo component as well
+
+Now you can deploy from the resulting `deploy` directory
+
+```bash
+sfdx force:mdapi:deploy -d deploy -w -1 --verbose
+```
+
+📌 Above deploys to the default org set
+
+- Add -u user@domain.com or -u alias to deploy else where
+
+Results should more or less mirror below
+
+```bash
+DEPLOY PROGRESS | ████████████████████████████████████████ | 2/2 Components
+
+=== Deployed Source
+Type                      File                    Name            Id
+────────────────────────  ──────────────────────  ──────────────  ──────────────────
+                          zip/package.xml         package.xml
+LightningComponentBundle  zip/lwc/uiProgress      uiProgress      0Rb1U000000kb5qSAA
+```
+
+
+---
+
+coded while petting a 🐶 by [Jamie Smith](https://jsmith.dev)
