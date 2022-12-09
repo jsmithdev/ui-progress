@@ -20,7 +20,7 @@ LWC w/ ProgressBar.js for line, circle, semi or custom progress UI(s)
 
 ## Deploy
 
-todo ~~Click to deploy can be done at [https://component.land?share=jsmithdev%2Fui-progress](https://component.land?share=jsmithdev%2Fui-progress)~~
+Click to deploy can be done at [https://component.land?share=jsmithdev%2Fui-progress](https://component.land?share=jsmithdev%2Fui-progress)
 
 ### SFDX
 
