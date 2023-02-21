@@ -1,16 +1,33 @@
 <template>
-    <lightning-card title="Demo">
+    <lightning-card title="lwc-progress Demo">
         <div class="container">
             <div class="box">
                 <div style="width: 100%;">
                     <div style="margin: 0 auto;width: fit-content;">
                         <c-ui-progress
                             text
+							type="line"
                             width={quarterWidth}
                             progress={progress}
                             color={color}
                             background="#888"
                         ></c-ui-progress>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div style="width: 100%;">
+                    <div style="margin: 0 auto;width: fit-content;">
+						<c-ui-progress
+							text
+							type="pill"
+                            width={quarterWidth}
+							progress={progress}
+							color={color}
+							text-color="#fff"
+							text-size="1.2rem"
+							background="#888"
+						></c-ui-progress>
                     </div>
                 </div>
             </div>
@@ -43,7 +60,7 @@
                     </div>
                 </div>
             </div>
-            <div class="box">
+            <div class="box" style="background-color: lightpink;">
                 <div style="width: 100%;">
                     <div style="margin: 0 auto;width: fit-content;">
                         <c-ui-progress
@@ -57,11 +74,9 @@
                     </div>
                 </div>
             </div>
-          </div>
+		</div>
 
         <br />
-
-
 
         <div slot="footer">
             <lightning-button

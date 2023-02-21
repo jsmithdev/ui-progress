@@ -3,7 +3,7 @@ import { LightningElement } from 'lwc';
 export default class UiProgressDemo extends LightningElement {
 
     progress = 75
-    color = '#07e887'
+    color = '#2B65EC'
     customSvg = this.getCustomSvg()
     quarterWidth = '100px'
 
